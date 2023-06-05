@@ -55,39 +55,42 @@ speed of sound in the air at 20ºC (68ºF) = 343m/s
 
 
 ### PROGRAM 
+```python
+#define echoPin 9
+#define trigPin 10
+long duration;
+int distance;
+void setup()
+{
+  pinMode(trigPin, OUTPUT);
+  pinMode(echoPin, INPUT);
+  Serial.begin(9600);
+}
+void loop()
+{
+  digitalWrite(trigPin, LOW);
+  delayMicroseconds(2);
+  digitalWrite(trigPin, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigPin, LOW);
+  duration = pulseIn(echoPin, HIGH);
+  distance = duration * 0.034/2;
+  Serial.print("Distance: ");
+  Serial.print(distance);
+  Serial.println("cm");
+}
+```
 
 
+### OUTPUT :
+BEFORE STIMULATION :
+![image](https://github.com/Prasannalakshmiganesan/Experiment--04-Interfacing-digital-output-with-arduino-ultrasonic-sensor/assets/118610231/a4f0067d-25be-4aca-97dc-fafcc580ab81)
+
+AFTER STIMULATION :
+![image](https://github.com/Prasannalakshmiganesan/Experiment--04-Interfacing-digital-output-with-arduino-ultrasonic-sensor/assets/118610231/272001b8-731c-402b-abf0-0ef2e58a193d)
 
 
-
-
-### Distance vs measurement table 
-
-			
- 
-			
-			
-			
-
-![image](https://user-images.githubusercontent.com/36288975/190135379-52ebacd5-ccd5-460f-a4cd-4d0ad1d9b179.png)
-
-			
-			
-			
-			
-			
-			Average error = sum/ number of readings 
- 
-
-
-
-
-
-
-
-
-### RESULTS
-
-
+#### RESULTS :
+Interfacing digital output with arduino ultrasonic sensor was successfully created.
 
  
